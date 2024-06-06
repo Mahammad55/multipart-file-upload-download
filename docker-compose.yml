@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  custom-postgres:
+    image: postgres
+    container_name: file-upload
+    ports:
+      - '5436:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - db:/var/lib/postgresql/data
+
+volumes:
+  db:
